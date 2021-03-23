@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/back"
+    android:background="@color/green"
     android:padding="10dp">
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
@@ -20,48 +21,45 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/app_title"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:fontFamily="serif-monospace"/>
+        android:fontFamily="sans-serif-condensed-medium" />
     <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp"/>
+        android:layout_height="20dp"/>
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/login_username"/>
+        android:hint="@string/register_username"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/login_password"
+        android:hint="@string/register_password"
         android:inputType="textPassword"/>
-    <CheckBox
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_rememberMe"/>
-    <LinearLayout
+        android:hint="@string/register_email"
+        android:inputType="textEmailAddress"/>
+    <Space
         android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+    <Button
+        android:id="@+id/register"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/login_login"
-            android:backgroundTint="@color/grey"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/login_register"
-            android:backgroundTint="@color/grey"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
+        android:layout_gravity="center"
+        android:text="@string/register_register"
+        android:backgroundTint="@color/grey" />
 </LinearLayout>

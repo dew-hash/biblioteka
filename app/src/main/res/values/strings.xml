@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">Biblioteka</string>
-    <string name="app_title">KBB \"Geroji naujiena\" biblioteka</string>
+    <string name="app_title">Biblioteka \"Geroji naujiena\"</string>
     <string name="login_username">Vartotojo vardas</string>
     <string name="login_password">Slaptažodis</string>
+    <string name="register_username">Vartotojo vardas</string>
+    <string name="register_password">Slaptažodis</string>
+    <string name="register_email">El. pašto adresas</string>
     <string name="login_login">Prisijungti</string>
     <string name="login_register">Registruotis</string>
+    <string name="register_register">Registruotis</string>
     <string name="login_rememberMe">Prisimink mane</string>
     <string name="login_invalid_credentials">Neteisingai įvestas vardas arba/ir slaptažodis</string>
+    <string name="register_invalid_credentials">Neteisingai įvesti duomenys</string>
 </resources>
