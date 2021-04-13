@@ -20,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
         EditText password = findViewById(R.id.password);
         EditText email = findViewById(R.id.email);
         Button register = findViewById(R.id.register);
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,9 +28,15 @@ public class RegisterActivity extends AppCompatActivity {
                 String passwordStr = password.getText().toString();
                 String emailStr = email.getText().toString();
                 username.setError(null);
-                if (Validation.isUsernameValid(usernameStr) && Validation.isPasswordValid(passwordStr) && Validation.isEmailValid(emailStr)) {
+                if (emailStr.length()<50 && emailStr.length()>10 && Validation.isUsernameValid(usernameStr) && Validation.isPasswordValid(passwordStr) && Validation.isEmailValid(emailStr)) {
                     Toast.makeText(RegisterActivity.this, "Prisijungimo vardas: " + usernameStr + "\nSlaptažodis: " + passwordStr + "\nEl. paštas: "+ emailStr, Toast.LENGTH_LONG).show();
                     Intent goToLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class); //parametrai: iš kur (visad su this, nes šita klasė), į kur (visad su class)
+                    User user = new User(usernameStr, passwordStr, emailStr);
+                    User.SharedPreferencesUse preferences = new User.SharedPreferencesUse(RegisterActivity.this);
+                    preferences.setUsername(usernameStr);
+                    preferences.setPassword(passwordStr);
+                    preferences.setRememberMe(false);
+                    preferences.setEmail(emailStr);
                     startActivity(goToLoginActivity);
                 }
                 else {

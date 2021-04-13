@@ -12,4 +12,6 @@
     <string name="login_rememberMe">Prisimink mane</string>
     <string name="login_invalid_credentials">Neteisingai įvestas vardas arba/ir slaptažodis</string>
     <string name="register_invalid_credentials">Neteisingai įvesti duomenys</string>
+    <string name="search_loading_data">Prašau, palaukti duomenų</string>
+    <string name="search_error_reading_string">Negalėjo nuskaityti duomenų iš API</string>
 </resources>
