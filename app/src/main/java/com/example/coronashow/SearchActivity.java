@@ -24,7 +24,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         //bus paleidžiama nauja gija
         AsyncFetch asyncFetch = new AsyncFetch();
-        asyncFetch.execute();   //Ar šitas pats iškviečia tuos metodus ir naudoja?
+        asyncFetch.execute();   //Šitas pats iškviečia tuos metodus ir naudoja.
     }
 
     private class AsyncFetch extends AsyncTask <String, String, JSONObject> {

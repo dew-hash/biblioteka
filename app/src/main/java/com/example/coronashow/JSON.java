@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-        import org.json.JSONObject;
+import org.json.JSONObject;
 
 public class JSON {
 
@@ -49,16 +49,16 @@ public class JSON {
     }
 
     public static JSONArray getJSONArray(JSONObject jsonObject) throws JSONException {
-        JSONArray jsonObjectData = (JSONArray) jsonObject.get("covid19Stats");
+        //JSONArray jsonObjectData = (JSONArray) jsonObject.get("covid19Stats");
         int jsonLength = jsonObject.toString().length();
         String covid19Stats = "{" + jsonObject.toString().substring(96, jsonLength)+ "}";
-    //int jsonLength = jsonObject.toString().length();
         JSONObject jsonObject1 = new JSONObject(covid19Stats);
         return jsonObject1.getJSONArray("covid119Stats");
     }
 
     public static  ArrayList<Corona> getCoronaListByCountry(ArrayList<Corona> coronaArrayList, String country) {
         ArrayList<Corona> coronaArrayListByCountry=new ArrayList<Corona>();
+        System.out.println("Vykdo duomenų traukimą apie šalį");
         for(Corona corona : coronaArrayListByCountry) {
             if(corona.getKeyID().contains(country)) {
                 coronaArrayListByCountry.add(corona);
