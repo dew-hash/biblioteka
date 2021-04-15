@@ -32,10 +32,10 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Prisijungimo vardas: " + usernameStr + "\nSlaptažodis: " + passwordStr + "\nEl. paštas: "+ emailStr, Toast.LENGTH_LONG).show();
                     Intent goToLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class); //parametrai: iš kur (visad su this, nes šita klasė), į kur (visad su class)
                     User user = new User(usernameStr, passwordStr, emailStr);
-                    User.SharedPreferencesUse.setUsername(usernameStr);
-                    User.SharedPreferencesUse.setPassword(passwordStr);
-                    User.SharedPreferencesUse.setRememberMe(false);
-                    User.SharedPreferencesUse.setEmail(emailStr);
+                    UserPreferences.setUsername(usernameStr);
+                    UserPreferences.setPassword(passwordStr);
+                    UserPreferences.setRememberMe(false);
+                    UserPreferences.setEmail(emailStr);
                     startActivity(goToLoginActivity);
                 }
                 else {

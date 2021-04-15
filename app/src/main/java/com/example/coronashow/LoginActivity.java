@@ -22,10 +22,10 @@ import android.widget.TextView;
         Button login = findViewById(R.id.login);
         Button register = findViewById(R.id.register);
         CheckBox remember = findViewById(R.id.remember);
-        remember.setChecked(User.SharedPreferencesUse.getRememberMe(this));
+        remember.setChecked(UserPreferences.getRememberMe(this));
         if(remember.isChecked()) {
-            username.setText(User.SharedPreferencesUse.getUsername(), TextView.BufferType.EDITABLE);
-            password.setText(User.SharedPreferencesUse.getPassword(), TextView.BufferType.EDITABLE);
+            username.setText(UserPreferences.getUsername(), TextView.BufferType.EDITABLE);
+            password.setText(UserPreferences.getPassword(), TextView.BufferType.EDITABLE);
         } else {
             username.setText("", TextView.BufferType.EDITABLE);
             password.setText("", TextView.BufferType.EDITABLE);
@@ -42,13 +42,13 @@ import android.widget.TextView;
                     //Toast.makeText(LoginActivity.this, "Prisijungimo vardas: " + usernameStr + "\nSlaptažodis: " + passwordStr, Toast.LENGTH_LONG).show();
                     User user = new User(usernameStr, passwordStr);
                     if(remember.isChecked()) {
-                        User.SharedPreferencesUse.setRememberMe(true);
+                        UserPreferences.setRememberMe(true);
                     }
                     else {
-                        User.SharedPreferencesUse.setRememberMe(false);
+                        UserPreferences.setRememberMe(false);
                     }
-                    User.SharedPreferencesUse.setUsername(usernameStr);
-                    User.SharedPreferencesUse.setPassword(passwordStr);
+                    UserPreferences.setUsername(usernameStr);
+                    UserPreferences.setPassword(passwordStr);
                     Intent goToSearchActivity = new Intent(LoginActivity.this, SearchActivity.class); //parametrai: iš kur (su this), į kur (su class)
                     startActivity(goToSearchActivity);
                 }

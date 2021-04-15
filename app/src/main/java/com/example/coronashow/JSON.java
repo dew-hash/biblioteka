@@ -1,13 +1,12 @@
 package com.example.coronashow;
 import java.io.BufferedReader;
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.io.InputStreamReader;
-        import java.io.Reader;
-        import java.net.URL;
-        import java.nio.charset.Charset;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,17 +52,18 @@ public class JSON {
         int jsonLength = jsonObject.toString().length();
         String covid19Stats = "{" + jsonObject.toString().substring(96, jsonLength)+ "}";
         JSONObject jsonObject1 = new JSONObject(covid19Stats);
-        return jsonObject1.getJSONArray("covid119Stats");
+        JSONArray jsonArray = jsonObject1.getJSONArray("covid19Stats");
+        return jsonArray;
     }
 
     public static  ArrayList<Corona> getCoronaListByCountry(ArrayList<Corona> coronaArrayList, String country) {
-        ArrayList<Corona> coronaArrayListByCountry=new ArrayList<Corona>();
+        ArrayList<Corona> coronaArrayListOfCountry=new ArrayList<Corona>();
         System.out.println("Vykdo duomenų traukimą apie šalį");
-        for(Corona corona : coronaArrayListByCountry) {
+        for(Corona corona : coronaArrayListOfCountry) {
             if(corona.getKeyID().contains(country)) {
-                coronaArrayListByCountry.add(corona);
+                coronaArrayListOfCountry.add(corona);
             }
         }
-        return coronaArrayListByCountry;
+        return coronaArrayListOfCountry;
     }
 }
