@@ -40,6 +40,7 @@ import android.widget.TextView;
                 password.setError(null);
                 if (Validation.isUsernameValid(usernameStr) && Validation.isPasswordValid(passwordStr)) {
                     //Toast.makeText(LoginActivity.this, "Prisijungimo vardas: " + usernameStr + "\nSlaptažodis: " + passwordStr, Toast.LENGTH_LONG).show();
+                    System.out.println("viskas gerai, validuoja");
                     User user = new User(usernameStr, passwordStr);
                     if(remember.isChecked()) {
                         UserPreferences.setRememberMe(true);

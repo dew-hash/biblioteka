@@ -36,19 +36,24 @@ public class JSON {
 
     public static ArrayList<Corona> getList(JSONArray jsonArray) throws JSONException {
         ArrayList<Corona> coronaList = new ArrayList<Corona>();
+        //extract data form json and store into ArrayList as class objects
         for (int i=0; i<jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
-            Corona corona= new Corona(jsonObject.getString("country"),
+            Corona corona= new Corona(
+                    jsonObject.getString("country"),
                     jsonObject.getString("lastUpdate"),
                     jsonObject.getString("keyID"),
                     jsonObject.getInt("confirmed"),
-                    jsonObject.getInt("deaths"));
+                    jsonObject.getInt("deaths")
+            );
+            coronaList.add(corona);
         }
         return coronaList;
     }
 
-    public static JSONArray getJSONArray(JSONObject jsonObject) throws JSONException {
+    public static JSONArray getJSONArray(JSONObject jsonObject) throws JSONException { //
         //JSONArray jsonObjectData = (JSONArray) jsonObject.get("covid19Stats");
+        //removing unnecessary information from json
         int jsonLength = jsonObject.toString().length();
         String covid19Stats = "{" + jsonObject.toString().substring(96, jsonLength)+ "}";
         JSONObject jsonObject1 = new JSONObject(covid19Stats);
@@ -59,7 +64,7 @@ public class JSON {
     public static  ArrayList<Corona> getCoronaListByCountry(ArrayList<Corona> coronaArrayList, String country) {
         ArrayList<Corona> coronaArrayListOfCountry=new ArrayList<Corona>();
         System.out.println("Vykdo duomenų traukimą apie šalį");
-        for(Corona corona : coronaArrayListOfCountry) {
+        for(Corona corona : coronaArrayList) {
             if(corona.getKeyID().contains(country)) {
                 coronaArrayListOfCountry.add(corona);
             }
