@@ -1,2 +1,2 @@
 # biblioteka
-Appsas bibliotekos administratoriui ir klientams
+android programėlė bibliotekos administratoriui ir klientams
